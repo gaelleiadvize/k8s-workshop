@@ -2,8 +2,9 @@
 
 K8s Workshop for my awesome ISD TEAM
 
-
+<p align="center">
 <img src="https://raw.githubusercontent.com/gaelleiadvize/k8s-workshop/master/img/isd.png" width="150">
+</p>
 
 ## Setup
 
