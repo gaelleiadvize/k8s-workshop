@@ -50,12 +50,12 @@ Before you can run or deploy the sample, you need to do the following:
 ## Install Environment : 
 
 
-###  ** Docker For Mac (Edge) **
+####  ** Docker For Mac (Edge) **
 
 [Get last release here][docker4Mac]
 
 
-### ** GCLOUD SDK **
+#### ** GCLOUD SDK **
 
 
 1. Enter the following at a command prompt:
@@ -72,8 +72,51 @@ Before you can run or deploy the sample, you need to do the following:
             
    Continue authentication ...  
             
+ 
+#### ** Kubectl SDK **
+
+Prerequis - Homebrew : https://brew.sh/index_fr
+
+
+    gcloud components install kubectl           
             
-            
-            
+
+## Cluster authentication
+
+
+
+- List clusters : 
+
+
+    gcloud container clusters list
+
+
+- Get credential 
+    
+    
+    gcloud container clusters get-credentials {CLUSTER_NAME} --project {PROJECT_ID} --zone europe-west1
+
+
+- View namespaces :
+
+
+    kubectl get namespaces
+
+
+- View current context
+
+    
+    kubectl config current-context
+
+
+
+- Switch to your namespace : 
+
+
+    kubectl config set-context $(kubectl config current-context) --namespace={NAMESPACE}
+    
+#Deploy your first APP :
+
+          
 [homebrew]: https://brew.sh/index_fr
 [docker4Mac]: https://docs.docker.com/docker-for-mac/edge-release-notes/
