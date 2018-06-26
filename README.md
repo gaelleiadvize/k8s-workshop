@@ -7,12 +7,12 @@ K8s Workshop for my awesome ISD TEAM
 <img src="https://raw.githubusercontent.com/gaelleiadvize/k8s-workshop/master/img/k8s.png" width="150">
 </p>
 
-## Kubernetes workshop
+## Workshops :
 
  
+ - [Deploy nodejs app on Kubernetes](https://github.com/gaelleiadvize/k8s-workshop/blob/master/k8s/README.md)
 
-
-    
+ - [Deploy nodejs app on AppEngine standard](https://github.com/gaelleiadvize/k8s-workshop/blob/master/appengine/standard/README.md)
     
     
     
