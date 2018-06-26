@@ -14,43 +14,39 @@ documentation.
 
 Before you can run or deploy the sample, you need to do the following:
 
-1.  Refer to the [appengine/README.md][readme] file for instructions on
-    running and deploying.
 1.  Install dependencies:
 
-    With `npm`:
-
-        npm install
-
-    or with `yarn`:
-
-        yarn install
+            
+            yarn install
 
 ## Running locally
 
-With `npm`:
-
-    npm start
-
-or with `yarn`:
+with `yarn`:
 
     yarn start
 
 ## Deploying to App Engine
 
-With `npm`:
+ At the root directory : 
+ 
+   1 - Edit app.yaml & choose a name for the service
+   
+   2 - Deploy !
+    
+        gcloud app deploy
+        
+        
+<p align="center">
+<img src="https://i.giphy.com/d2Z9QYzA2aidiWn6.gif">
+</p>
+       
 
-    npm run deploy
+## Running test version
 
-or with `yarn`:
+  At the root directory : 
+        
+            gcloud app deploy --no-promote   
 
-    yarn run deploy
-
-## Running the tests
-
-See [Contributing][contributing].
 
 [appengine]: https://cloud.google.com/appengine/docs/standard/nodejs
 [tutorial]: https://cloud.google.com/appengine/docs/standard/nodejs/quickstart
-[readme]: ../../k8s/README.md
-[contributing]: https://github.com/GoogleCloudPlatform/nodejs-docs-samples/blob/master/CONTRIBUTING.md

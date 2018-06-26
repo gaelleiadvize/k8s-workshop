@@ -1,4 +1,4 @@
-# k8s-workshop
+# k8s-workshop & AppEngine bonus :p
 
 K8s Workshop for my awesome ISD TEAM
 
