@@ -239,7 +239,9 @@ Prerequis - Homebrew : https://brew.sh/index_fr
 Go to http://{EXTERNAL-IP} 
 
  
-
+<p align="center">
+that’s all !
+</p>
 <p align="center">
 that’s all !
 <img src="https://i.giphy.com/3o6gEaYbewKku0GwPS.gif">
