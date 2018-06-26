@@ -104,10 +104,10 @@ Prerequis - Homebrew : https://brew.sh/index_fr
 ## Deploy your first APP :
 
 
-#### Run App locally
+### Run App locally
 
         
-- Clone the repository : 
+#### - Clone the repository: 
 
  https://github.com/gaelleiadvize/k8s-workshop
  
@@ -128,6 +128,111 @@ Prerequis - Homebrew : https://brew.sh/index_fr
 
 
 <p align="center">It works ! Go to k8s now 😛 </p>
-          
+
+
+
+
+#### -  Build / Push docker images
+
+
+    cd k8s-workshop/k8s/hello-world
+    
+   => View DockerFile & explain
+    
+    # build docker image : 
+    docker build -t eu.gcr.io/dev-production/hello-world-{gacas}:v1 .
+    
+    # push docker image : 
+    docker push eu.gcr.io/dev-production/hello-world-{gacas}:v1
+
+
+
+
+#### - Deployment :
+
+    cd k8s-workshop/k8s/resources
+    
+   Explain what is a deployment ??????
+    
+   edit deployment.yaml file with your editor
+   set your namespace : ex gacas
+   
+       apiVersion: extensions/v1beta1
+       kind: Deployment
+       metadata:
+         name: hello-world
+         namespace: gacas
+       spec:
+         replicas: 1
+         strategy:
+        [...]
+  
+  And Apply :  
+  
+  
+    # Apply deployment 
+    kubectl apply -f deployment.yaml
+    
+    
+    
+    # list deployments : 
+    kubectl get deployment
+    NAME          DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+    hello-world   1         1         1            1           1h   
+    
+    
+    
+
+#### - Expose app with service (service.yaml) :
+    
+    cd k8s-workshop/k8s/resources
+    
+    Explain what is a deployment ??????
+    
+    edit service.yaml
+    set your namespace : ex gacas
+    
+    # Apply service 
+    kubectl apply -f service.yaml
+
+
+    # list service : 
+    kubectl get service
+    NAME          TYPE           CLUSTER-IP    EXTERNAL-IP     PORT(S)        AGE
+    hello-world   NodePort       10.7.252.74   <none>          80:30986/TCP   1h
+
+
+#### -  Expose app to the world :
+
+
+    cd k8s-workshop/k8s/resources
+    edit service.yaml
+    
+    change 
+     type: NodePort
+     to 
+     type: LoadBalancer
+    
+    # Apply service 
+    kubectl apply -f service.yaml
+
+
+    # list service : 
+    kubectl get service
+    NAME          TYPE           CLUSTER-IP    EXTERNAL-IP     PORT(S)        AGE
+    hello-world   LoadBalancer   10.7.252.74   35.195.106.40   80:30986/TCP   1h
+
+Go to http://35.195.106.40 
+
+that’s all !    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 [homebrew]: https://brew.sh/index_fr
 [docker4Mac]: https://docs.docker.com/docker-for-mac/edge-release-notes/
