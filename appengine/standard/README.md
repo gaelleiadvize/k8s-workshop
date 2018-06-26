@@ -8,7 +8,7 @@ documentation.
 * [Setup](#setup)
 * [Running locally](#running-locally)
 * [Deploying to App Engine](#deploying-to-app-engine)
-* [Running the tests](#running-the-tests)
+* [Running the tests](#running-test-version)
 
 ## Setup
 
