@@ -150,18 +150,18 @@ Prerequis - Homebrew : https://brew.sh/index_fr
 
 #### - Deployment :
 
-    cd k8s-workshop/k8s/resources
+    cd k8s-workshop/k8s/deploy
     
    Explain what is a deployment ??????
     
    edit deployment.yaml file with your editor
-   set your namespace : ex gacas
+   set your namespace : ex mynamespace
    
        apiVersion: extensions/v1beta1
        kind: Deployment
        metadata:
          name: hello-world
-         namespace: gacas
+         namespace: mynamespace
        spec:
          replicas: 1
          strategy:
@@ -180,21 +180,33 @@ Prerequis - Homebrew : https://brew.sh/index_fr
     NAME          DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
     hello-world   1         1         1            1           1h   
     
-    
+   
     
 
 #### - Expose app with service (service.yaml) :
     
-    cd k8s-workshop/k8s/resources
+    cd k8s-workshop/k8s/deploy
     
-    Explain what is a deployment ??????
+   * Edit service.yaml & set your namespace : ex mynamespace
     
-    edit service.yaml
-    set your namespace : ex gacas
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: hello-world
+      namespace: mynamespace
+    spec:
+      ports:
+      - port: 80
+        targetPort: 8080
+        protocol: TCP
+      type: NodePort
+      selector:
+        app: hello-world
     
+   * Apply : 
+   
     # Apply service 
     kubectl apply -f service.yaml
-
 
     # list service : 
     kubectl get service
@@ -205,8 +217,9 @@ Prerequis - Homebrew : https://brew.sh/index_fr
 #### -  Expose app to the world :
 
 
-    cd k8s-workshop/k8s/resources
-    edit service.yaml
+    cd k8s-workshop/k8s/deploy
+    
+   * Edit service.yaml
     
     change 
      type: NodePort
@@ -222,10 +235,15 @@ Prerequis - Homebrew : https://brew.sh/index_fr
     NAME          TYPE           CLUSTER-IP    EXTERNAL-IP     PORT(S)        AGE
     hello-world   LoadBalancer   10.7.252.74   35.195.106.40   80:30986/TCP   1h
 
-Go to http://35.195.106.40 
 
-that’s all !    
-    
+Go to http://{EXTERNAL-IP} 
+
+that’s all ! 
+
+<p align="center">
+<img src="https://i.giphy.com/3o6gEaYbewKku0GwPS.gif">
+</p>   
+ 
     
     
     
