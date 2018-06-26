@@ -31,22 +31,6 @@ Before you can run or deploy the sample, you need to do the following:
     [Get last release here][docker4Mac]
 
 
-## Run App locally
-
-1.  Go to root app directory & run :
-
-        yarn install
-2.  run 
-        
-        npm run start-dev
-    or 
-        npm run start   
-        
-<p align="center">
-<img src="https://i.giphy.com/l3q2SH4Cmhh8F40jS.gif">
-</p>
-
-
 ## Install Environment : 
 
 
@@ -115,8 +99,35 @@ Prerequis - Homebrew : https://brew.sh/index_fr
 
     kubectl config set-context $(kubectl config current-context) --namespace={NAMESPACE}
     
-#Deploy your first APP :
 
+
+## Deploy your first APP :
+
+
+#### Run App locally
+
+        
+- Clone the repository : 
+
+ https://github.com/gaelleiadvize/k8s-workshop
+ 
+
+    git clone git@github.com:gaelleiadvize/k8s-workshop.git
+    
+    cd k8s-workshop/k8s/hello-world
+    
+    yarn install
+    yarn start
+    
+    
+  See  <a href="http://localhost:8080" target="blank">http://localhost:8080</a>
+
+<p align="center">
+<img src="https://i.giphy.com/l3q2SH4Cmhh8F40jS.gif">
+</p>
+
+
+<p align="center">It works ! Go to k8s now 😛 </p>
           
 [homebrew]: https://brew.sh/index_fr
 [docker4Mac]: https://docs.docker.com/docker-for-mac/edge-release-notes/
