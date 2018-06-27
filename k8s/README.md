@@ -138,6 +138,9 @@ Prerequis - Homebrew : https://brew.sh/index_fr
     cd k8s-workshop/k8s/hello-world
     
    => View DockerFile & explain
+   
+    # Auth docker gcp :
+    gcloud auth configure-docker
     
     # build docker image : 
     docker build -t eu.gcr.io/dev-production/hello-world-{gacas}:v1 .
