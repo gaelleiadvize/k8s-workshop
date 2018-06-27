@@ -136,7 +136,7 @@ Prerequis - Homebrew : https://brew.sh/index_fr
 
     cd k8s-workshop/k8s/hello-world
     
-    # Configure docker for Goolge container registry
+    # Configure docker for Goolge container registry (You need a docker account)
     gcloud auth configure-docker (after create docker login)
     
     # build docker image : 
