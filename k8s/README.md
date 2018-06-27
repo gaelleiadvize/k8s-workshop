@@ -131,13 +131,13 @@ Prerequis - Homebrew : https://brew.sh/index_fr
 
 
 
-
 #### -  Build / Push docker images
 
 
     cd k8s-workshop/k8s/hello-world
     
-   => View DockerFile & explain
+    # Configure docker for Goolge container registry
+    gcloud auth configure-docker (after create docker login)
     
     # build docker image : 
     docker build -t eu.gcr.io/dev-production/hello-world-{gacas}:v1 .
